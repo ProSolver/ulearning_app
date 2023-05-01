@@ -21,54 +21,37 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.blue,
         ),
         debugShowCheckedModeBanner: false,
-        home: const MyHomePage(title: 'Flutter Demo Home Page'),
+        home: const MyHomePage(),
       ),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  double _counter = 1.0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
-  void _decrementCounter() {
-    setState(() {
-      _counter--;
-    });
-  }
+class MyHomePage extends StatelessWidget {
+  const MyHomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: const Text("FlutterDemoHomePage"),
       ),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '${BlocProvider.of<AppBlocs>(context).state.counter}',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
-          ],
+        child: BlocBuilder<AppBlocs, AppStates>(
+          builder: (context, state) {
+            return Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                const Text(
+                  'You have pushed the button this many times:',
+                ),
+                Text(
+                  '${BlocProvider.of<AppBlocs>(context).state.counter}',
+                  style: Theme.of(context).textTheme.headlineMedium,
+                ),
+              ],
+            );
+          },
         ),
       ),
       floatingActionButton: Row(
@@ -81,7 +64,8 @@ class _MyHomePageState extends State<MyHomePage> {
             child: const Icon(Icons.add),
           ),
           FloatingActionButton(
-            onPressed: _decrementCounter,
+            onPressed: () =>
+                BlocProvider.of<AppBlocs>(context).add(Decrement()),
             tooltip: 'Decrement',
             child: const Icon(Icons.remove),
           ),
