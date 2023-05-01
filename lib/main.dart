@@ -22,6 +22,7 @@ class MyApp extends StatelessWidget {
           create: (context) => WelcomeBloc(),
         ),
         BlocProvider(
+          lazy: false,
           create: (context) => AppBlocs(),
         ),
       ],

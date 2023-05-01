@@ -4,6 +4,7 @@ import 'package:ulearning_app/pages/welcome/bloc/welcome_states.dart';
 
 class WelcomeBloc extends Bloc<WelcomeEvents, WelcomeStates> {
   WelcomeBloc() : super(WelcomeStates()) {
+    print("welcome bloc");
     on((event, emit) {
       emit(WelcomeStates(page: state.page));
     });
