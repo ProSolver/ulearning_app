@@ -161,3 +161,10 @@ Play
     4min
 
 
+
+
+0=>16. Welcome screen and show image ui part 8
+
+https://www.dbestech.com/resources/ulearn_resources.zip
+
+https://www.udemy.com/share/108rBs3@iQX9ON7broG-Iqlj3-mgns54OnXWQUyWjD4Kyb3Kc71uj-49ASmFn9douL4cb7g7sg==/
