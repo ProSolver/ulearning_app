@@ -67,12 +67,14 @@ class MyHomePage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           FloatingActionButton(
+            heroTag: "heroTag1",
             onPressed: () =>
                 BlocProvider.of<AppBlocs>(context).add(Increment()),
             tooltip: 'Increment',
             child: const Icon(Icons.add),
           ),
           FloatingActionButton(
+            heroTag: "heroTag2",
             onPressed: () =>
                 BlocProvider.of<AppBlocs>(context).add(Decrement()),
             tooltip: 'Decrement',
