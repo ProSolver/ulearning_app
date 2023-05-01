@@ -19,17 +19,21 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(
+          //lazy: false,
           create: (context) => WelcomeBloc(),
         ),
         BlocProvider(
-          lazy: false,
+          //lazy: false,
           create: (context) => AppBlocs(),
         ),
       ],
       child: ScreenUtilInit(
-        builder: (context, child) => const MaterialApp(
+        builder: (context, child) => MaterialApp(
           debugShowCheckedModeBanner: false,
-          home: Welcome(),
+          home: const Welcome(),
+          routes: {
+            "myHomePage": (context) => const MyHomePage(),
+          },
           //home: const MyHomePage(),
         ),
       ),
