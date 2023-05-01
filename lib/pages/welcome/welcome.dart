@@ -1,7 +1,11 @@
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:ulearning_app/pages/welcome/bloc/welcome_blocs.dart';
+import 'package:ulearning_app/pages/welcome/bloc/welcome_events.dart';
+import 'package:ulearning_app/pages/welcome/bloc/welcome_states.dart';
 
 class Welcome extends StatefulWidget {
   const Welcome({Key? key}) : super(key: key);
@@ -16,57 +20,68 @@ class _WelcomeState extends State<Welcome> {
     return Container(
       color: Colors.white,
       child: Scaffold(
-        body: Container(
-          margin: EdgeInsets.only(top: 34.h),
-          width: 375.w,
-          child: Stack(
-            alignment: Alignment.topCenter,
-            children: [
-              PageView(
+        body: BlocBuilder<WelcomeBloc, WelcomeStates>(
+          builder: (context, state) {
+            return Container(
+              margin: EdgeInsets.only(top: 34.h),
+              width: 375.w,
+              child: Stack(
+                alignment: Alignment.topCenter,
                 children: [
-                  _page(
-                    1,
-                    context,
-                    "next",
-                    "First See Learning",
-                    "Forget about a for of paper all knowledge in one learning",
-                    "imagePath",
+                  PageView(
+                    onPageChanged: (index) {
+                      state.page = index;
+                      BlocProvider.of<WelcomeBloc>(context)
+                          .add(WelcomeEvents());
+                      print("index value is $index");
+                    },
+                    children: [
+                      _page(
+                        1,
+                        context,
+                        "next",
+                        "First See Learning",
+                        "Forget about a for of paper all knowledge in one learning",
+                        "imagePath",
+                      ),
+                      _page(
+                        2,
+                        context,
+                        "next",
+                        "Connect With Everyone",
+                        "Always keep in touch with your tutor & friends. Let's get connected",
+                        "imagePath",
+                      ),
+                      _page(
+                        3,
+                        context,
+                        "get started",
+                        "Always fascinated Learning",
+                        "Anywhere, anytime. The time is at your discretion so study whenever you want",
+                        "imagePath",
+                      ),
+                    ],
                   ),
-                  _page(
-                    2,
-                    context,
-                    "next",
-                    "Connect With Everyone",
-                    "Always keep in touch with your tutor & friends. Let's get connected",
-                    "imagePath",
-                  ),
-                  _page(
-                    3,
-                    context,
-                    "get started",
-                    "Always fascinated Learning",
-                    "Anywhere, anytime. The time is at your discretion so study whenever you want",
-                    "imagePath",
+                  Positioned(
+                    bottom: 90.h, //100.h
+                    child: DotsIndicator(
+                      position: state.page.toDouble(),
+                      dotsCount: 3,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      decorator: DotsDecorator(
+                        color: Colors.grey,
+                        activeColor: Colors.blue,
+                        size: const Size.square(8.0),
+                        activeSize: const Size(10.0, 8.0),
+                        activeShape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(5.0)),
+                      ),
+                    ),
                   ),
                 ],
               ),
-              Positioned(
-                bottom: 90.h, //100.h
-                child: DotsIndicator(
-                  dotsCount: 3,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  decorator: DotsDecorator(
-                    color: Colors.grey,
-                    activeColor: Colors.blue,
-                    size: const Size.square(8.0),
-                    activeSize: const Size(10.0, 8.0),
-                    activeShape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(5.0)),
-                  ),
-                ),
-              ),
-            ],
-          ),
+            );
+          },
         ),
       ),
     );
