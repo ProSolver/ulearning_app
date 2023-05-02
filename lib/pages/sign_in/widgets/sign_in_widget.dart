@@ -62,3 +62,12 @@ Widget reusableText(String text) {
     ),
   );
 }
+
+Widget buildTextField(String text, String textType) {
+  return Container(
+    width: 325.w,
+    height: 50.h,
+    color: Colors.red,
+    child: Text("Hi"),
+  );
+}
