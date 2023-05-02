@@ -19,6 +19,13 @@ class _SignInState extends State<SignIn> {
         child: Scaffold(
           backgroundColor: Colors.white,
           appBar: buildAppBar(),
+          body: SingleChildScrollView(
+            child: Column(
+              children: [
+                buildThirdPartyLogin(context),
+              ],
+            ),
+          ),
         ),
       ),
     );
