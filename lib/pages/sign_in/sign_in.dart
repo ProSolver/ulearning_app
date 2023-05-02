@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:ulearning_app/pages/sign_in/widgets/sign_in_widget.dart';
 
 class SignIn extends StatefulWidget {
   const SignIn({Key? key}) : super(key: key);
@@ -17,22 +18,7 @@ class _SignInState extends State<SignIn> {
       child: SafeArea(
         child: Scaffold(
           backgroundColor: Colors.white,
-          appBar: AppBar(
-            bottom: PreferredSize(
-              preferredSize: const Size.fromHeight(1.0),
-              child: Container(
-                color: Colors.grey.withOpacity(0.5),
-                height: 1.0,
-              ),
-            ),
-            title: Text(
-              "Log In",
-              style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 16.sp,
-                  fontWeight: FontWeight.normal),
-            ),
-          ),
+          appBar: buildAppBar(),
         ),
       ),
     );
