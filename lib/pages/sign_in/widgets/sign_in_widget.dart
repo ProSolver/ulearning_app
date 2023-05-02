@@ -67,7 +67,23 @@ Widget buildTextField(String text, String textType) {
   return Container(
     width: 325.w,
     height: 50.h,
-    color: Colors.red,
-    child: Text("Hi"),
+    decoration: BoxDecoration(
+        color: Colors.red,
+        borderRadius: BorderRadius.all(Radius.circular(15.w)),
+        border: Border.all(color: Colors.black)),
+    child: Row(
+      children: [
+        Container(
+          width: 16.w,
+          margin: EdgeInsets.only(left: 17.w),
+          height: 16.w,
+          child: Image.asset("assets/icons/user.png"),
+        ),
+        Container(
+          width: 280.w,
+          height: 50.h,
+        )
+      ],
+    ),
   );
 }
