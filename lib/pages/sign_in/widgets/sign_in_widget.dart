@@ -80,8 +80,26 @@ Widget buildTextField(String text, String textType) {
           child: Image.asset("assets/icons/user.png"),
         ),
         Container(
-          width: 280.w,
+          width: 270.w,
           height: 50.h,
+          child: TextField(
+            keyboardType: TextInputType.multiline,
+            decoration: InputDecoration(
+                hintText: "Enter your email address",
+                border: const OutlineInputBorder(
+                  borderSide: BorderSide(color: Colors.transparent),
+                ),
+                enabledBorder: const OutlineInputBorder(
+                  borderSide: BorderSide(color: Colors.transparent),
+                ),
+                disabledBorder: const OutlineInputBorder(
+                  borderSide: BorderSide(color: Colors.transparent),
+                ),
+                focusedBorder: const OutlineInputBorder(
+                  borderSide: BorderSide(color: Colors.transparent),
+                ),
+                hintStyle: TextStyle(color: Colors.grey.withOpacity(0.5))),
+          ),
         )
       ],
     ),

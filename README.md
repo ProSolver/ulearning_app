@@ -168,3 +168,88 @@ Play
 https://www.dbestech.com/resources/ulearn_resources.zip
 
 https://www.udemy.com/share/108rBs3@iQX9ON7broG-Iqlj3-mgns54OnXWQUyWjD4Kyb3Kc71uj-49ASmFn9douL4cb7g7sg==/
+
+RoneeMRayhan
+/
+ulearning_app
+Public
+Pin
+Unwatch 1
+Fork 0 Cannot fork because repository is empty.
+Star 0
+Code
+Issues
+Pull requests
+Actions
+Projects
+Wiki
+Security
+Insights
+Settings
+Set up GitHub Copilot
+Use GitHub's AI pair programmer to autocomplete suggestions as you code.
+
+Invite collaborators
+Find people using their GitHub username or email address.
+
+Quick setup — if you’ve done this kind of thing before
+Set up in Desktop	or
+HTTPS
+SSH
+
+Get started by creating a new file or uploading an existing file. We recommend every repository include a README, LICENSE, and .gitignore.
+…or create a new repository on the command line
+echo "# ulearning_app" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/RoneeMRayhan/ulearning_app.git
+git push -u origin main
+…or push an existing repository from the command line
+git remote add origin https://github.com/RoneeMRayhan/ulearning_app.git
+git branch -M main
+git push -u origin main
+…or import code from another repository
+You can initialize this repository with code from a Subversion, Mercurial, or TFS project.
+
+Import code
+ProTip! Use the URL for this page when adding GitHub as a remote.
+Footer
+© 2023 GitHub, Inc.
+Footer navigation
+Terms
+Privacy
+Security
+Status
+Docs
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
+
+https://github.com/git-ecosystem/git-credential-manager/blob/main/README.mdhttps://github.com/git-ecosystem/git-credential-manager/blob/main/README.md
+
+https://github.com/git-ecosystem/git-credential-manager/blob/release/docs/install.md
+
+macOS
+
+Homebrew ⭐
+
+Note: If you have an existing installation of the 'Java GCM' on macOS and you have installed this using Homebrew, this installation will be unlinked (brew unlink git-credential-manager) when GCM is installed.
+
+Install
+
+brew tap microsoft/git
+brew install --cask git-credential-manager-core
+After installing you can stay up-to-date with new releases by running:
+
+brew upgrade git-credential-manager-core
+Uninstall
+
+To uninstall, run the following:
+
+brew uninstall --cask git-credential-manager-core
+
